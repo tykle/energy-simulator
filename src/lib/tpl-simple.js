@@ -4,26 +4,26 @@ import '../App.css';
 import logo from '../signderiva-logo.png'
 
 import {
-  Layout,
-  Select,
-  Menu
+    Layout,
+    Select,
+    Menu
 } from 'antd';
 
 const { Header, Footer, Sider, Content } = Layout;
 
 export class template extends Component {
-  render() {
-    return (
-      <Layout className="sd-tpl-simple-layout">
+    render() {
+        return (
+            <Layout className="sd-tpl-simple-layout">
 
-        <Content className="sd-tpl-simple-content">
-          {this.props.children}
-        </Content>
-        <Footer className="sd-tpl-simple-footer"></Footer>
+                <Content className="sd-tpl-simple-content">
+                    {this.props.children}
+                </Content>
+                <Footer className="sd-tpl-simple-footer"></Footer>
 
-      </Layout>
-    )
-  }
+            </Layout>
+        )
+    }
 }
 
 export default template
