@@ -1,6 +1,6 @@
 {
     "name": "tykle-energy-simu",
-    "homepage": "http://tykle.github.io/energy-simulator",
+    "homepage": "https://tykle.github.io/energy-simulator",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
