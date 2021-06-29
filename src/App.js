@@ -5,7 +5,12 @@ import './App.css';
 import Template from './lib/tpl-simple'
 
 import moment from 'moment';
+
 import numeral from 'numeral';
+import "numeral/locales/fr";
+import "numeral/locales/fr-ch";
+import "numeral/locales/fr-ca";
+
 import prefix from 'metric-prefix';
 
 import * as XLSX from 'xlsx';
@@ -29,6 +34,25 @@ import { fuelSources, cryptoMachines } from './lib/sources'
 const { Header, Footer, Sider, Content } = Layout;
 const { Option } = Select;
 
+const numeralLocales = [
+    {
+        name: "English",
+        key: "en"
+    },
+    {
+        name: "Francais",
+        key: "fr"
+    },
+    {
+        name: "Francais Suisse",
+        key: "fr-ch"
+    },
+    {
+        name: "Francais Canada",
+        key: "fr-ca"
+    }
+]
+
 /*
 Le client arrive et hash() et sign()
 Contact 5 noeuds qui vont hash() verify() sign() circulairement
@@ -39,7 +63,7 @@ const machines = cryptoMachines
 
 const hardriveResidence = 10 / (250 * 1024 * 1024 * 1024)
 
-export default class elecarfuel extends Component {
+export default class tykleFuelSim extends Component {
 
     constructor() {
         super()
@@ -52,6 +76,7 @@ export default class elecarfuel extends Component {
         }
 
         this.state = this.prepare({
+            locale: 0,
             step: 0,
             lifetime: new Date(),
             machineId: 0,
@@ -367,6 +392,7 @@ export default class elecarfuel extends Component {
         }
 
         retrieveInt("difficulty")
+        retrieveInt("locale")
         retrieveInt("machineId")
         retrieveInt("validationAuthority")
         retrieveInt("transactionSize")
@@ -387,6 +413,16 @@ export default class elecarfuel extends Component {
         if (data.hasOwnProperty("simulation")) {
             inputState.simulation = data.simulation
             refresh = true
+        }
+
+        if (data.hasOwnProperty("locale")) {
+            inputState.locale = data.locale;
+            const l = numeralLocales[inputState.locale];
+            if (l) {
+                numeral.locale(l.key);
+                // console.log("Change locale", inputState.locale, l);
+            }
+            
         }
 
         if (data.hasOwnProperty("exportable")) {
@@ -424,6 +460,8 @@ export default class elecarfuel extends Component {
             resultState.transaction = sim.steps
 
             resultState[`_total_transaction`] = sim.energy;
+
+
         }
 
         return ({
@@ -502,6 +540,12 @@ export default class elecarfuel extends Component {
         const changeReset = ({ target }) => {
             this.export = []
             this.setState(this.backup)
+        }
+
+        const changeLocale = (target) => {
+            this.process({
+                locale: target,
+            })
         }
 
         const changeMachine = (target) => {
@@ -643,6 +687,19 @@ export default class elecarfuel extends Component {
                                     </Space>
 
                                 </Form.Item>
+
+                                <Form.Item label="Locale Notation">
+                                    <Select
+                                        placeholder="Select a locale"
+                                        onChange={changeLocale}
+                                        value={this.state.input.locale}
+                                    >
+                                        {numeralLocales.map((value, index) => (
+                                            <Option value={index} key={`locales-${index}`}>{value.name}</Option>
+                                        ))}
+                                    </Select>
+                                </Form.Item>
+
                                 <Form.Item label="Machine Preset">
                                     <Select
                                         showSearch
