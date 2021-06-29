@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/energy-simulator/static/css/main.9c891cde.chunk.css",
-    "main.js": "/energy-simulator/static/js/main.622f192e.chunk.js",
-    "main.js.map": "/energy-simulator/static/js/main.622f192e.chunk.js.map",
-    "runtime-main.js": "/energy-simulator/static/js/runtime-main.948a6717.js",
-    "runtime-main.js.map": "/energy-simulator/static/js/runtime-main.948a6717.js.map",
+    "main.js": "/energy-simulator/static/js/main.bdf3d3b2.chunk.js",
+    "main.js.map": "/energy-simulator/static/js/main.bdf3d3b2.chunk.js.map",
+    "runtime-main.js": "/energy-simulator/static/js/runtime-main.3aed8527.js",
+    "runtime-main.js.map": "/energy-simulator/static/js/runtime-main.3aed8527.js.map",
     "static/css/2.ba8a8a05.chunk.css": "/energy-simulator/static/css/2.ba8a8a05.chunk.css",
-    "static/js/2.c9de17df.chunk.js": "/energy-simulator/static/js/2.c9de17df.chunk.js",
-    "static/js/2.c9de17df.chunk.js.map": "/energy-simulator/static/js/2.c9de17df.chunk.js.map",
-    "static/js/3.7f167fa2.chunk.js": "/energy-simulator/static/js/3.7f167fa2.chunk.js",
-    "static/js/3.7f167fa2.chunk.js.map": "/energy-simulator/static/js/3.7f167fa2.chunk.js.map",
+    "static/js/2.b7bc4e74.chunk.js": "/energy-simulator/static/js/2.b7bc4e74.chunk.js",
+    "static/js/2.b7bc4e74.chunk.js.map": "/energy-simulator/static/js/2.b7bc4e74.chunk.js.map",
+    "static/js/3.ffdfecb4.chunk.js": "/energy-simulator/static/js/3.ffdfecb4.chunk.js",
+    "static/js/3.ffdfecb4.chunk.js.map": "/energy-simulator/static/js/3.ffdfecb4.chunk.js.map",
     "index.html": "/energy-simulator/index.html",
     "static/css/2.ba8a8a05.chunk.css.map": "/energy-simulator/static/css/2.ba8a8a05.chunk.css.map",
     "static/css/main.9c891cde.chunk.css.map": "/energy-simulator/static/css/main.9c891cde.chunk.css.map",
-    "static/js/2.c9de17df.chunk.js.LICENSE.txt": "/energy-simulator/static/js/2.c9de17df.chunk.js.LICENSE.txt",
+    "static/js/2.b7bc4e74.chunk.js.LICENSE.txt": "/energy-simulator/static/js/2.b7bc4e74.chunk.js.LICENSE.txt",
     "static/media/signderiva-logo.7706b15d.png": "/energy-simulator/static/media/signderiva-logo.7706b15d.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.948a6717.js",
+    "static/js/runtime-main.3aed8527.js",
     "static/css/2.ba8a8a05.chunk.css",
-    "static/js/2.c9de17df.chunk.js",
+    "static/js/2.b7bc4e74.chunk.js",
     "static/css/main.9c891cde.chunk.css",
-    "static/js/main.622f192e.chunk.js"
+    "static/js/main.bdf3d3b2.chunk.js"
   ]
 }
